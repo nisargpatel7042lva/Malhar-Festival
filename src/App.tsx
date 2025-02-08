@@ -134,7 +134,7 @@ function App() {
       <section id="home" className="relative h-screen">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80"
+            src="https://www.shutterstock.com/image-photo/party-goers-nightclub-co2-cannons-600nw-1014005611.jpg"
             className="w-full h-full object-cover"
             alt="Concert background"
           />
