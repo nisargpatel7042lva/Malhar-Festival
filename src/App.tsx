@@ -9,7 +9,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img 
-            src="./Malharlogo.png" 
+            src="Malharlogo.png" 
             alt="Malhar Logo" 
             className="h-8 w-8 sm:h-100 sm:w-100"
           />
@@ -129,7 +129,7 @@ function App() {
   const totalPrice = tickets * ticketPrice;
 
   const handleBuyTickets = () => {
-    window.location.href = 'https://konfhub.com/your-event-link'; // Replace with actual KonfHub link
+    window.location.href = ''; // Replace with actual KonfHub link
   };
 
   return (
