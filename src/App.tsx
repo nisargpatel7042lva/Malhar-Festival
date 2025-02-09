@@ -15,14 +15,14 @@ function Navbar() {
           />
           <div className="flex items-center gap-2">
             
-            <span className="text-white font-bold text-lg sm:text-xl title-font">Musical Fiesta</span>
+            <span className="text-white font-bold text-lg sm:text-xl title-font">Malhar Festival</span>
           </div>
         </div>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
           <a href="#home" className="text-white hover:text-purple-400 transition">Home</a>
-          <a href="#tickets" className="text-white hover:text-purple-400 transition">Tickets</a>
+          <a href="#tickets" className="text-white hover:text-purple-400 transition">Entry Pass</a>
           <a href="#contact" className="text-white hover:text-purple-400 transition">Contact</a>
         </div>
 
@@ -51,7 +51,7 @@ function Navbar() {
               className="text-white hover:text-purple-400 transition"
               onClick={() => setIsMenuOpen(false)}
             >
-              Tickets
+              Evemt Pass
             </a>
             <a 
               href="#contact" 
@@ -149,13 +149,13 @@ function App() {
         
         <div className="relative pt-20 h-full flex flex-col justify-center items-center text-center px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 title-font">
-            Musical Fiesta
+            Tune Carnival
           </h1>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-purple-400 title-font">
             Featuring Mohit Chauhan
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl">
-            Experience an unforgettable evening of soulful melodies and powerful vocals with Gujarat's musical sensation
+          Experience the voice of a true Rockstar! A soulful evening with the iconic playback singer! 🎸
           </p>
           <CountdownTimer />
         </div>
@@ -164,7 +164,7 @@ function App() {
       {/* Tickets Section */}
       <section id="tickets" className="min-h-screen py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font">Get Your Passes</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font">Get Your Pass</h2>
           <div className="relative bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-4 sm:p-8 rounded-xl backdrop-blur-sm border border-purple-500/30 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:border-purple-400">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-20 h-20 bg-purple-500/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
@@ -174,14 +174,14 @@ function App() {
             <div className="relative">
               <div className="flex items-center justify-center gap-4 mb-8">
                 <Ticket className="text-purple-400 h-6 w-6 sm:h-8 sm:w-8" />
-                <h3 className="text-xl sm:text-2xl font-bold title-font">Regular Pass</h3>
+                <h3 className="text-xl sm:text-2xl font-bold title-font">Festive Pass</h3>
               </div>
               
               <div className="flex flex-col items-center gap-6 mb-8">
                 <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 title-font">
                   ₹{ticketPrice}
                 </div>
-                <div className="w-full max-w-xs p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-purple-500/20">
+                {/* <div className="w-full max-w-xs p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-purple-500/20">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-gray-300">Quantity:</span>
                     <div className="flex items-center gap-3">
@@ -204,13 +204,17 @@ function App() {
                     <span>Total:</span>
                     <span>₹{totalPrice}</span>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="space-y-4 mb-8 text-sm text-gray-300">
-                <p>• Access to all performances</p>
-                <p>• Exclusive merchandise</p>
-                <p>• Food & beverage voucher</p>
+                <p>• No Refunds/Exchanges</p>
+                <p>• Valid Ticket Required</p>
+                <p>• Resale Restrictions</p>
+                <p>• Security Checks</p>
+                <p>• Liability Waiver</p>
+                <p>• Photography Consent</p>
+                <p>• Governing Law</p>
               </div>
 
               <button
@@ -235,13 +239,12 @@ function App() {
               <div className="flex items-center gap-4">
                 <Mail className="text-purple-400 shrink-0" />
                 <a href="mailto:contact@rhythmnight.com" className="hover:text-purple-400 transition">
-                  contact@rhythmnight.com
-                </a>
+                  contact@svitvasad.ac.in                </a>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="text-purple-400 shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-purple-400 transition">
-                  +123 456 7890
+                <a href="tel:+919409662002" className="hover:text-purple-400 transition">
+                  +91 94 0966 2002
                 </a>
               </div>
               <div className="flex items-start gap-4">
@@ -257,7 +260,7 @@ function App() {
             <div className="space-y-6">
               <h3 className="text-xl font-bold title-font mb-4">Follow Us</h3>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-purple-400 transition">
+                <a href="https://www.instagram.com/scc.svit.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-purple-400 transition">
                   <Instagram size={24} />
                 </a>
                 <a href="#" className="hover:text-purple-400 transition">
