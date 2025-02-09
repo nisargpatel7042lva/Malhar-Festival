@@ -139,7 +139,7 @@ function App() {
   const totalPrice = tickets * ticketPrice;
 
   const handleBuyTickets = () => {
-    window.location.href = ''; // Replace with actual KonfHub link
+    window.location.href = 'https://konfhub.com/checkout/malhar-entry-pass?ticketId=32645'; // Replace with actual KonfHub link
   };
 
   return (
