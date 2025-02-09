@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Music4, Mail, Phone, Instagram, Twitter, Facebook, Ticket, Menu, X } from 'lucide-react';
+import { Mail, Phone, Instagram, Twitter, Facebook, Ticket, Menu, X, MapPin } from 'lucide-react';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,9 +7,16 @@ function Navbar() {
   return (
     <nav className="fixed w-full bg-black/80 backdrop-blur-sm z-50 px-4 sm:px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Music4 className="text-purple-500 h-6 w-6 sm:h-8 sm:w-8" />
-          <span className="text-white font-bold text-lg sm:text-xl title-font">Musical Fiesta</span>
+        <div className="flex items-center gap-3">
+          <img 
+            src="./src/Malhar Logo.png" 
+            alt="Malhar Logo" 
+            className="h-8 w-8 sm:h-100 sm:w-100"
+          />
+          <div className="flex items-center gap-2">
+            
+            <span className="text-white font-bold text-lg sm:text-xl title-font">Musical Fiesta</span>
+          </div>
         </div>
         
         {/* Desktop Menu */}
@@ -127,7 +134,6 @@ function App() {
 
   return (
     <div className="bg-black text-white">
-      {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
@@ -154,12 +160,12 @@ function App() {
           <CountdownTimer />
         </div>
       </section>
-
+      
       {/* Tickets Section */}
       <section id="tickets" className="min-h-screen py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font">Get Your Passes</h2>
-          <div className="relative bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-4 sm:p-8 rounded-xl backdrop-blur-sm border border-purple-500/30 overflow-hidden">
+          <div className="relative bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-4 sm:p-8 rounded-xl backdrop-blur-sm border border-purple-500/30 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:border-purple-400">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-20 h-20 bg-purple-500/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full translate-x-1/2 translate-y-1/2" />
@@ -223,23 +229,33 @@ function App() {
       <section id="contact" className="bg-purple-900/20 py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center title-font">Get in Touch</h2>
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
+          <div className="grid md:grid-cols-3 gap-8 sm:gap-12">
             <div className="space-y-6">
+              <h3 className="text-xl font-bold title-font mb-4">Contact Info</h3>
               <div className="flex items-center gap-4">
-                <Mail className="text-purple-400" />
+                <Mail className="text-purple-400 shrink-0" />
                 <a href="mailto:contact@rhythmnight.com" className="hover:text-purple-400 transition">
                   contact@rhythmnight.com
                 </a>
               </div>
               <div className="flex items-center gap-4">
-                <Phone className="text-purple-400" />
+                <Phone className="text-purple-400 shrink-0" />
                 <a href="tel:+1234567890" className="hover:text-purple-400 transition">
                   +123 456 7890
                 </a>
               </div>
+              <div className="flex items-start gap-4">
+                <MapPin className="text-purple-400 shrink-0 mt-1" />
+                <address className="not-italic text-gray-300">
+                  Sardar Vallabhbhai Patel Institute of Technology, <br />
+                  B/h. S.T, Vasad, <br />
+                  Gujarat 388306
+                </address>
+              </div>
             </div>
+
             <div className="space-y-6">
-              <h3 className="text-xl font-bold title-font">Follow Us</h3>
+              <h3 className="text-xl font-bold title-font mb-4">Follow Us</h3>
               <div className="flex gap-6">
                 <a href="#" className="hover:text-purple-400 transition">
                   <Instagram size={24} />
@@ -250,6 +266,21 @@ function App() {
                 <a href="#" className="hover:text-purple-400 transition">
                   <Facebook size={24} />
                 </a>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold title-font mb-4">Location</h3>
+              <div className="w-full h-64 rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.9332687608494!2d73.07379517501302!3d22.469141836754744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fb55277d1e457%3A0xaf7e43a3d29561b!2sSardar%20Vallabhbhai%20Patel%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1738574532572!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
