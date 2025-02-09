@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Mail, Phone, Instagram, Twitter, Facebook, Ticket, Menu, X, MapPin } from 'lucide-react';
-import logo from './assets/Malharlogo.svg';
+import logo from './assets/malharlogo.svg';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
