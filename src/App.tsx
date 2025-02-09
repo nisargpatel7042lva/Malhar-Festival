@@ -53,7 +53,7 @@ function Navbar() {
               className="text-white hover:text-purple-400 transition"
               onClick={() => setIsMenuOpen(false)}
             >
-              Evemt Pass
+              Entry Pass
             </a>
             <a 
               href="#contact" 
