@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Mail, Phone, Instagram, Twitter, Facebook, Ticket, Menu, X, MapPin } from 'lucide-react';
 
+
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,7 +12,7 @@ function Navbar() {
           <img 
             src="../src/assets/Malharlogo.png" 
             alt="Malhar Logo" 
-            className="h-8 w-8 sm:h-100 sm:w-100"
+            className="h-12 w-12 sm:h-50 sm:w-50"
           />
           <div className="flex items-center gap-2">
             
