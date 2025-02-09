@@ -208,13 +208,14 @@ function App() {
               </div>
 
               <div className="space-y-4 mb-8 text-sm text-gray-300">
-                <p>• No Refunds/Exchanges</p>
-                <p>• Valid Ticket Required</p>
-                <p>• Resale Restrictions</p>
-                <p>• Security Checks</p>
-                <p>• Liability Waiver</p>
-                <p>• Photography Consent</p>
-                <p>• Governing Law</p>
+                
+                <p>• No Re-Entry: Once you leave the venue, re-entry is not allowed.</p>
+                <p>• ID Required: Please bring a valid photo ID to collect your pass.</p>
+                <p>• Security Check: All attendees must pass security; prohibited items are not allowed.</p>
+                <p>• Respectful Behavior: Disruptive behavior may result in removal without a refund.</p>
+                <p>• Entry Refusal: Organizers can deny entry at their discretion.</p>
+                <p>• Personal Belongings: We are not responsible for lost or stolen items.</p>
+                
               </div>
 
               <button
