@@ -10,9 +10,10 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img 
-            src="../src/assets/Malharlogo.png" 
+            src="../src/assets/Malharlogo.svg" 
             alt="Malhar Logo" 
-            className="h-12 w-12 sm:h-50 sm:w-50"
+            className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
+
           />
           <div className="flex items-center gap-2">
             
@@ -82,7 +83,7 @@ function CountdownTimer() {
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
-      const difference = targetDate - now;
+      const difference = targetDate.getTime() - now;
 
       if (difference > 0) {
         return {

@@ -67,3 +67,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #a855f7;
 }
+
+.hover\:transition-all {
+  transition: all 0.3s ease-in-out;
+}
