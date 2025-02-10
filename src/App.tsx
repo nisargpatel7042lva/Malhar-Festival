@@ -167,7 +167,7 @@ function App() {
             Featuring Mohit Chauhan
           </h2> */}
           <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl">
-          Experience the voice of a true Rockstar! A soulful evening with the iconic playback singer! 🎸
+          Welcome to Malhar & Tune Carnival, the heart of cultural expression at SVIT Vasad! A vibrant fusion of art, music, and tradition, Malhar is our grand annual cultural festival, celebrating creativity in every form.
           </p>
           <CountdownTimer />
         </div>
