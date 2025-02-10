@@ -163,9 +163,9 @@ function App() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 title-font">
             Tune Carnival
           </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-purple-400 title-font">
+          {/* <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-purple-400 title-font">
             Featuring Mohit Chauhan
-          </h2>
+          </h2> */}
           <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl">
           Experience the voice of a true Rockstar! A soulful evening with the iconic playback singer! 🎸
           </p>
