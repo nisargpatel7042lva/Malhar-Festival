@@ -18,15 +18,16 @@ function Navbar() {
     <nav className="fixed w-full bg-black/80 backdrop-blur-sm z-50 px-4 sm:px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3">
+        <a href="#home">
           <img 
-            src= { logo } 
+            src={logo} 
             alt="Malhar Logo" 
             className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
-
           />
+        </a>
           <div className="flex items-center gap-2">
             
-            <span className="text-white font-bold text-lg sm:text-xl title-font">Malhar Festival</span>
+            <a href="#home" className="text-white font-bold text-lg sm:text-xl title-font">Malhar Festival</a>
           </div>
         </div>
         
