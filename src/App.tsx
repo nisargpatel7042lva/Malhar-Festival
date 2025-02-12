@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Mail, Phone, Instagram, Twitter, Facebook, Ticket, Menu, X, MapPin } from 'lucide-react';
+import { Mail, Phone, Instagram, Twitter, Facebook, Ticket, Menu, X, MapPin, Plus, Minus, Calendar } from 'lucide-react';
 import logo from './assets/malharlogo.svg';
-import pic1 from './assets/DSC04290.jpg';
-import pic2 from './assets/THUMBNAIL4K.png';
-import pic3 from './assets/pic.jpg';
-import pic4 from './assets/155c.jpg';
-import pic5 from './assets/abc.jpg';
+import pic6 from './assets/mc post.png';
+
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -141,30 +138,124 @@ function CountdownTimer() {
 }
 
 
-function TimerWithCarousel() {
-  const [time, setTime] = useState(0);
+// Timeline data
+const timelineEvents = [
+  {
+    year: "2023",
+    title: "Rhythm Revolution",
+    description: "A spectacular showcase featuring over 50 artists and drawing crowds of 10,000+ attendees. Highlighted by stunning performances from leading industry artists.",
+    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    year: "2022",
+    title: "Sonic Fusion",
+    description: "A groundbreaking year that merged classical and contemporary music styles, featuring collaborative performances that redefined musical boundaries.",
+    image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    year: "2021",
+    title: "Digital Harmony",
+    description: "Our first-ever virtual edition reached global audiences, connecting musicians and fans across continents through innovative online performances.",
+    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    year: "2020",
+    title: "Musical Renaissance",
+    description: "A celebration of artistic resilience, featuring intimate performances and showcasing the power of music to unite people even in challenging times.",
+    image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=1000",
+  }
+];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime((prevTime) => prevTime + 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
+function Timeline() {
   return (
-    <div className="flex flex-col items-center p-4">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font">Major Highlights This Year!</h2>
-      {/* <div className="text-2xl font-bold">Timer: {time}s</div> */}
-      
-      {/* Netflix-style Carousel */}
-      
-      <div className="relative w-full max-w-4xl overflow-hidden">
-        <div className="flex gap-2 overflow-x-scroll scrollbar-hide">
-          <img src= {pic3} alt="Carousel Image" className="w-50 h-80 rounded-lg" />
-          <img src= {pic1} alt="Mohit chauhan Image" className="w-50 h-80 rounded-lg" />
-          <img src= {pic4} alt="Carousel Image" className="w-50 h-80 rounded-lg" />
-          <img src= {pic2} alt="Madhur Image" className="w-50 h-80 rounded-lg" />
-          <img src= {pic5} alt="Madhur Image" className="w-50 h-80 rounded-lg" />
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-black/30 backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16 title-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+          Our Journey Through the Years
+        </h2>
+        
+        {/* Mobile Timeline (visible on small screens) */}
+        <div className="md:hidden space-y-8">
+          {timelineEvents.map((event) => (
+            <div 
+              key={event.year}
+              className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-xl overflow-hidden backdrop-blur-sm border border-purple-500/30 transform transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]"
+            >
+              <img 
+                src={event.image} 
+                alt={event.title} 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-purple-600 rounded-full p-2 shadow-[0_0_20px_rgba(168,85,247,0.5)]">
+                    <Calendar className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 title-font">
+                    {event.year}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 title-font">
+                  {event.title}
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base">
+                  {event.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Timeline (visible on medium and larger screens) */}
+        <div className="relative hidden md:block">
+          {/* Vertical line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full" />
+          
+          {timelineEvents.map((event, index) => (
+            <div 
+              key={event.year} 
+              className={`mb-24 relative group ${index % 2 === 0 ? 'text-right' : 'text-left'}`}
+            >
+              <div className={`flex flex-row items-center ${index % 2 === 0 ? 'flex-row-reverse' : ''} gap-8`}>
+                {/* Year marker */}
+                <div className="w-1/2 flex justify-center relative">
+                  <div 
+                    className={`absolute transform w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-all duration-300 group-hover:scale-110 ${
+                      index % 2 === 0 
+                        ? 'left-auto right-0 translate-x-1/2' 
+                        : 'right-auto left-0 -translate-x-1/2'
+                    }`}
+                  >
+                    <Calendar className="w-7 h-7 text-white" />
+                  </div>
+                  <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-6 rounded-xl backdrop-blur-sm border border-purple-500/30 w-auto transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+                    <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 title-font">
+                      {event.year}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="w-1/2">
+                  <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-xl overflow-hidden backdrop-blur-sm border border-purple-500/30 transform transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] group-hover:scale-105">
+                    <img 
+                      src={event.image} 
+                      alt={event.title} 
+                      className="w-full h-56 object-cover transform transition-all duration-500 group-hover:scale-105"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 title-font">
+                        {event.title}
+                      </h3>
+                      <p className="text-gray-300">
+                        {event.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -174,10 +265,38 @@ function TimerWithCarousel() {
 
 
 
+function Poster() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div className="flex flex-col justify-center items-center min-h-screen bg-black px-4">
+      {/* Heading */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16 title-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+        A Night of Soulful Melodies & Electrifying Rhythms Awaits!
+      </h2>
+
+      {/* Poster Container */}
+      <div
+        className={`relative bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-2xl backdrop-blur-sm border border-purple-500/30 overflow-hidden transition-all duration-300 
+        ${isHovered ? "shadow-[0_0_40px_rgba(168,85,247,0.5)] border-purple-400" : ""}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{ width: "100%", maxWidth: "700px" }} // Full width, no padding
+      >
+        {/* Poster Image (No Cropping) */}
+        <img
+          src={pic6} 
+          alt="Event Poster"
+          className="w-full h-auto object-contain rounded-lg"
+          style={{ maxHeight: "100%", maxWidth: "100%" }} // Ensures full visibility
+        />
+      </div>
+    </div>
+  );
+}
+
 function App() {
-  const [tickets, setTickets] = useState(1);
   const ticketPrice = 499;
-  const totalPrice = tickets * ticketPrice;
 
   const handleBuyTickets = () => {
     window.location.href = 'https://konfhub.com/checkout/svit?ticketId=32748'; // Replace with actual KonfHub link
@@ -211,12 +330,16 @@ function App() {
           <CountdownTimer />
         </div>
       </section>
-          <TimerWithCarousel />
+          <Timeline />
+          <Poster /> 
+          {/* <TimerWithCarousel /> */}
       
       {/* Tickets Section */}
       <section id="tickets" className="min-h-screen py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font">Get Your Pass</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font pt-12 sm:pt-0">
+          Get Your Pass
+        </h2>
           <div className="relative bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-4 sm:p-8 rounded-xl backdrop-blur-sm border border-purple-500/30 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:border-purple-400">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-20 h-20 bg-purple-500/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
