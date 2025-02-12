@@ -135,6 +135,39 @@ function CountdownTimer() {
   );
 }
 
+
+function TimerWithCarousel() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime((prevTime) => prevTime + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center p-4">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font">Major Highlights This Year!</h2>
+      {/* <div className="text-2xl font-bold">Timer: {time}s</div> */}
+      
+      {/* Netflix-style Carousel */}
+      
+      <div className="relative w-full max-w-4xl overflow-hidden">
+        <div className="flex gap-2 overflow-x-scroll scrollbar-hide">
+          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
 function App() {
   const [tickets, setTickets] = useState(1);
   const ticketPrice = 499;
@@ -172,6 +205,7 @@ function App() {
           <CountdownTimer />
         </div>
       </section>
+          <TimerWithCarousel />
       
       {/* Tickets Section */}
       <section id="tickets" className="min-h-screen py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
