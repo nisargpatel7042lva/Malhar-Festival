@@ -155,10 +155,10 @@ function TimerWithCarousel() {
       
       <div className="relative w-full max-w-4xl overflow-hidden">
         <div className="flex gap-2 overflow-x-scroll scrollbar-hide">
-          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
-          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
-          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
-          <img src="/mnt/data/image.png" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+          <img src="../src/assets/DSC04290.jpg" alt="Mohit chauhan Image" className="w-50 h-80 rounded-lg" />
+          <img src="../src/assets/THUMBNAIL4K.png" alt="Carousel Image" className="w-50 h-80 rounded-lg" />
+          <img src="" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+          <img src="" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
         </div>
       </div>
     </div>
