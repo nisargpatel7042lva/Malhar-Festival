@@ -135,6 +135,39 @@ function CountdownTimer() {
   );
 }
 
+
+function TimerWithCarousel() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime((prevTime) => prevTime + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center p-4">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 title-font">Major Highlights This Year!</h2>
+      {/* <div className="text-2xl font-bold">Timer: {time}s</div> */}
+      
+      {/* Netflix-style Carousel */}
+      
+      <div className="relative w-full max-w-4xl overflow-hidden">
+        <div className="flex gap-2 overflow-x-scroll scrollbar-hide">
+          <img src="../src/assets/DSC04290.jpg" alt="Mohit chauhan Image" className="w-50 h-80 rounded-lg" />
+          <img src="../src/assets/THUMBNAIL4K.png" alt="Carousel Image" className="w-50 h-80 rounded-lg" />
+          <img src="" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+          <img src="" alt="Carousel Image" className="w-40 h-24 rounded-lg" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
 function App() {
   const [tickets, setTickets] = useState(1);
   const ticketPrice = 499;
@@ -167,11 +200,12 @@ function App() {
             Featuring Mohit Chauhan
           </h2> */}
           <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl">
-          Welcome to Malhar & Tune Carnival, the heart of cultural expression at SVIT Vasad! A vibrant fusion of art, music, and tradition, Malhar is our grand annual cultural festival, celebrating creativity in every form.
+          Welcome to Malhar & Tune Carnival, the heart of cultural expression at SVIT Vasad! A vibrant fusion of art, music, and tradition, Malhar is our grand annual cultural festival, celebrating creativity in every form.
           </p>
           <CountdownTimer />
         </div>
       </section>
+          <TimerWithCarousel />
       
       {/* Tickets Section */}
       <section id="tickets" className="min-h-screen py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
