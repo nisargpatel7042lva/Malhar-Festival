@@ -338,8 +338,7 @@ function App() {
           <CountdownTimer />
         </div>
       </section>
-          <Timeline />
-          <Poster /> 
+          
           {/* <TimerWithCarousel /> */}
       
       {/* Tickets Section */}
@@ -364,30 +363,6 @@ function App() {
                 <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 title-font">
                   ₹{ticketPrice}
                 </div>
-                {/* <div className="w-full max-w-xs p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-purple-500/20">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300">Quantity:</span>
-                    <div className="flex items-center gap-3">
-                      <button 
-                        onClick={() => setTickets(prev => Math.max(1, prev - 1))}
-                        className="bg-purple-600/80 hover:bg-purple-600 w-8 h-8 rounded-full flex items-center justify-center transition"
-                      >
-                        -
-                      </button>
-                      <span className="text-xl w-8 text-center">{tickets}</span>
-                      <button 
-                        onClick={() => setTickets(prev => Math.min(5, prev + 1))}
-                        className="bg-purple-600/80 hover:bg-purple-600 w-8 h-8 rounded-full flex items-center justify-center transition"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center text-sm text-gray-300">
-                    <span>Total:</span>
-                    <span>₹{totalPrice}</span>
-                  </div>
-                </div> */}
               </div>
 
               <div className="space-y-4 mb-8 text-sm text-gray-300">
@@ -406,14 +381,16 @@ function App() {
                 onClick={handleBuyTickets}
                 className="relative group overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 px-6 sm:px-8 py-3 rounded-lg text-lg sm:text-xl font-bold hover:opacity-90 transition"
               >
-                <span className="relative z-10">Book Now</span>
+                <span className="relative z-10">Register Now</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  
               </button>
             </div>
           </div>
         </div>
       </section>
-
+      <Timeline />
+      <Poster /> 
       {/* Contact Section */}
       <section id="contact" className="bg-purple-900/20 py-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -478,4 +455,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
