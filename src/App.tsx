@@ -373,7 +373,7 @@ function App() {
                 <p>• Respectful Behavior: Disruptive behavior may result in removal without a refund.</p>
                 <p>• Entry Refusal: Organizers can deny entry at their discretion.</p>
                 <p>• Personal Belongings: We are not responsible for lost or stolen items.</p>
-                <p>• It is a festival entry pass and not a concert pass.</p>
+                {/* <p>• It is a festival entry pass and not a concert pass.</p> */}
                 
               </div>
 
