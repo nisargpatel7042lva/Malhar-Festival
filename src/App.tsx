@@ -323,37 +323,32 @@ const sponsors = [
 const Sponsors = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-primary to-secondary text-white text-center">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16 title-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Our Sponsors</h2>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16 title-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+        Our Sponsors
+      </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8 md:px-16 lg:px-32">
-        {sponsors.map((sponsor, index) => (
-          <SponsorBox key={index} sponsor={sponsor} />
-        ))}
+        {sponsors.map((sponsor, index) => {
+          const [isHovered, setIsHovered] = useState(false);
+          return (
+            <div
+              key={index}
+              className={`relative w-72 h-40 flex items-center justify-center rounded-lg overflow-hidden transition-all duration-300 bg-white shadow-md border border-gray-200 
+                ${isHovered ? "shadow-lg scale-105" : ""}`}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 };
-
-const SponsorBox = ({ sponsor }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      className={`relative bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-2xl backdrop-blur-sm border border-purple-500/30 overflow-hidden transition-all duration-300 
-      ${isHovered ? "shadow-[0_0_40px_rgba(168,85,247,0.5)] border-purple-400" : ""}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="w-72 h-40 flex items-center justify-center p-4">
-        <img
-          src={sponsor.logo}
-          alt={sponsor.name}
-          className="w-full h-full object-contain"
-        />
-      </div>
-    </div>
-  );
-};
-
   return (
     <div className="bg-black text-white">
       <Navbar />
