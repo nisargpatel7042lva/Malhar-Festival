@@ -3,13 +3,9 @@ import { Mail, Phone, Instagram, Twitter, Facebook, Ticket, Menu, X, MapPin, Plu
 import logo from './assets/malharlogo.svg';
 import pic6 from './assets/mc post.png';
 import pic1 from './assets/155c.jpg'
-import pic2 from './assets/DSC04290.jpg'
-import pic3 from './assets/DSC04291.jpg'
-import pic4 from './assets/DSC04372.jpg'
-import pic5 from './assets/DSC04373.jpg'
-import pic7 from './assets/DSC08336.jpg'
 import pic8 from './assets/pic.jpg'
-import pic9 from './assets/THUMBNAIL4K.png'
+
+
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -309,6 +305,54 @@ function App() {
   const handleBuyTickets = () => {
     window.location.href = 'https://konfhub.com/checkout/svit?ticketId=32748'; // Replace with actual KonfHub link
   };
+  
+  const images = import.meta.glob<{ default: string }>("./assets/*.{jpg,png}", { eager: true });
+
+const sponsors = [
+  { name: "Amul", logo: images["./assets/amul.jpg"].default },
+  { name: "Ayush", logo: images["./assets/ayush.jpg"].default },
+  { name: "DCB", logo: images["./assets/dcb.jpg"].default },
+  { name: "Excursion", logo: images["./assets/excrusion.jpg"].default },
+  { name: "FTG", logo: images["./assets/ftg.png"].default },
+  { name: "ICICI", logo: images["./assets/icici.png"].default },
+  { name: "IMS", logo: images["./assets/ims.png"].default },
+  { name: "Krishiv", logo: images["./assets/krishiv.png"].default },
+  { name: "Union", logo: images["./assets/union.png"].default },
+];
+
+const Sponsors = () => {
+  return (
+    <section className="py-16 bg-gradient-to-b from-primary to-secondary text-white text-center">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16 title-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Our Sponsors</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8 md:px-16 lg:px-32">
+        {sponsors.map((sponsor, index) => (
+          <SponsorBox key={index} sponsor={sponsor} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const SponsorBox = ({ sponsor }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className={`relative bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-2xl backdrop-blur-sm border border-purple-500/30 overflow-hidden transition-all duration-300 
+      ${isHovered ? "shadow-[0_0_40px_rgba(168,85,247,0.5)] border-purple-400" : ""}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="w-72 h-40 flex items-center justify-center p-4">
+        <img
+          src={sponsor.logo}
+          alt={sponsor.name}
+          className="w-full h-full object-contain"
+        />
+      </div>
+    </div>
+  );
+};
 
   return (
     <div className="bg-black text-white">
@@ -391,6 +435,7 @@ function App() {
       </section>
       <Timeline />
       <Poster /> 
+      <Sponsors />
       {/* Contact Section */}
       <section id="contact" className="bg-purple-900/20 py-20 px-4">
         <div className="max-w-4xl mx-auto">
