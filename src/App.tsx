@@ -307,48 +307,53 @@ function App() {
   };
   
   const images = import.meta.glob<{ default: string }>("./assets/*.{jpg,png}", { eager: true });
-
-const sponsors = [
-  { name: "Amul", logo: images["./assets/amul.jpg"].default },
-  { name: "Ayush", logo: images["./assets/ayush.jpg"].default },
-  { name: "DCB", logo: images["./assets/dcb.jpg"].default },
-  { name: "Excursion", logo: images["./assets/excrusion.jpg"].default },
-  { name: "FTG", logo: images["./assets/ftg.png"].default },
-  { name: "ICICI", logo: images["./assets/icici.png"].default },
-  { name: "IMS", logo: images["./assets/ims.png"].default },
-  { name: "Krishiv", logo: images["./assets/krishiv.png"].default },
-  { name: "Union", logo: images["./assets/union.png"].default },
-];
-
-const Sponsors = () => {
-  return (
-    <section className="py-16 bg-gradient-to-b from-primary to-secondary text-white text-center">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16 title-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-        Our Sponsors
-      </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8 md:px-16 lg:px-32">
-        {sponsors.map((sponsor, index) => {
-          const [isHovered, setIsHovered] = useState(false);
-          return (
+  const sponsors = [
+    { name: "Amul", logo: images["./assets/amul.jpg"].default },
+    { name: "Ayush", logo: images["./assets/ayush.jpg"].default },
+    { name: "DCB", logo: images["./assets/dcb.jpg"].default },
+    { name: "Excursion", logo: images["./assets/excrusion.jpg"].default },
+    { name: "FTG", logo: images["./assets/ftg.png"].default },
+    { name: "ICICI", logo: images["./assets/icici.png"].default },
+    { name: "IMS", logo: images["./assets/ims.png"].default },
+    { name: "Krishiv", logo: images["./assets/krishiv.png"].default },
+    { name: "Union", logo: images["./assets/union.png"].default },
+  ];
+  
+  const Sponsors = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+  
+    return (
+      <section className="py-12 bg-gradient-to-b from-primary to-secondary text-white text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 title-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+          Our Sponsors
+        </h2>
+  
+        {/* Mobile View - Vertical Scrollable List */}
+        <div className="md:hidden flex flex-col items-center gap-4 px-4 py-2 overflow-y-auto max-h-[80vh]">
+          {sponsors.map((sponsor, index) => (
+            <div key={index} className="w-72 h-40 bg-white shadow-md border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+              <img src={sponsor.logo} alt={sponsor.name} className="w-full h-full object-contain p-2" />
+            </div>
+          ))}
+        </div>
+  
+        {/* Desktop View - Grid Layout with Hover Effect */}
+        <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-6 px-8 md:px-16">
+          {sponsors.map((sponsor, index) => (
             <div
               key={index}
               className={`relative w-72 h-40 flex items-center justify-center rounded-lg overflow-hidden transition-all duration-300 bg-white shadow-md border border-gray-200 
-                ${isHovered ? "shadow-lg scale-105" : ""}`}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
+                ${hoveredIndex === index ? "shadow-lg scale-105" : ""}`}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="w-full h-full object-contain"
-              />
+              <img src={sponsor.logo} alt={sponsor.name} className="w-full h-full object-contain p-2" />
             </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-};
+          ))}
+        </div>
+      </section>
+    );
+  };
   return (
     <div className="bg-black text-white">
       <Navbar />
