@@ -2,7 +2,7 @@
 
 Welcome to **Tune Carnival**, the official booking platform for our college fest! This platform allows users to explore events, book tickets, and enjoy the vibrant experiences of **Malhar Festival**.
 
-🔗 **Live Website:** [malharfestival.vercel.app](https://malharfestival.vercel.app)
+🔗 **Live Website:** [malharfestival.vercel.app](https://malharfestival.netlify.app)
 
 ---
 
